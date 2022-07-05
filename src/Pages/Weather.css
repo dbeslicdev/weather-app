@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@100;300;400;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Kantumruy Pro", sans-serif;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+
+  background: linear-gradient(#2980b9, #6dd5fa);
+  background-position: "center";
+  background-size: "cover";
+  background-repeat: "no-repeat";
+}
+
+.search-box {
+  width: 100%;
+  margin: 0 0 75px;
+}
+
+.search-box .search-bar {
+  display: block;
+  width: 30%;
+  padding: 15px;
+  margin: 0 auto;
+
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+
+  background-color: rgba(255, 255, 255, 0.819);
+  border-radius: 0px 0px 15px 15px;
+  margin-top: -10px;
+  border: 1px grey solid;
+}
+
+.weather {
+  background-color: rgba(255, 255, 255, 0.129);
+  min-width: 500px;
+  min-height: 500px;
+  border: 1px solid rgb(255, 254, 254);
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+.weather__city {
+  font-size: 3rem;
+}
+
+.weather__temp {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+
+.weather__description {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.weather__country {
+  font-size: 1.5rem;
+}
+
+.weather__pressure,
+.weather__humidity {
+  font-size: 1.4em;
+}
+
+.index {
+  font-size: 1rem;
+}
+
+.celsius {
+  font-size: 3rem;
+}
+
+.weather__minmax {
+  display: flex;
+  margin-top: 2rem;
+  justify-content: space-around;
+}
