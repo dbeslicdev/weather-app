@@ -9,19 +9,12 @@ import { Home } from "./Pages/Home";
 import { Weather } from "./Pages/Weather";
 
 export default function App() {
-  const { location, setLocation } = useLocation();
-
-  const addLocationHandler = (location) => {
-    setLocation(location);
-  };
-
-  console.log(location);
   return (
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<Home addLocation={addLocationHandler} />} />
-          <Route path="/weather" element={<Weather location={location} />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/weather/:location" element={<Weather />} />
         </Routes>
       </Router>
     </div>

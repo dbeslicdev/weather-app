@@ -2,6 +2,7 @@ import React from "react";
 
 export const WeatherBox = ({ data, query, setQuery }) => {
   const { name, sys, main, weather } = data;
+  console.log(data);
   return (
     <div className="container">
       <div className="search-box">

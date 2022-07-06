@@ -1,31 +1,27 @@
 import "./Weather.css";
 import React, { useState, useRef, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { WeatherBox } from "../components/weather/WeatherBox";
 
-export const Weather = ({ location }) => {
+export const Weather = () => {
   const api = {
     base: "https://api.openweathermap.org/data/2.5/weather?q=",
     key: "73f63ff4eb375395f2f079f2dccf53ac",
   };
 
-  const [data, setData] = useState([]);
-  const initMount = useRef(true);
-
-  console.log(initMount);
-  console.log(location);
-  console.log(data);
+  const [data, setData] = useState();
+  const params = useParams();
+  console.log(params);
 
   useEffect(() => {
-    if (initMount.current) {
-      initMount.current = false;
-      return;
-    } else
-      fetch(`${api.base}Osijek&appid=${api.key}&units=metric`)
-        .then((response) => response.json())
-        .then((json) => {
-          setData(json);
-        });
-  }, [location]);
+    if (!params) return;
 
-  return <WeatherBox data={data} setData={setData} />;
+    fetch(`${api.base}${params.location}&appid=${api.key}&units=metric`)
+      .then((response) => response.json())
+      .then((json) => {
+        setData(json);
+      });
+  }, []);
+
+  return <>{data && <WeatherBox data={data} setData={setData} />}</>;
 };

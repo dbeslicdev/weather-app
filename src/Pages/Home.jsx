@@ -1,18 +1,16 @@
 import React, { useContext, useState } from "react";
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
-import { WeatherContext } from "../components/weather/WeatherContext";
 import { useLocation } from "../hooks/useLocation";
 
-export const Home = ({ addLocation }) => {
+export const Home = () => {
   const { location, setLocation } = useLocation("");
   let navigate = useNavigate("");
 
   const submitFormHandler = (e) => {
     e.preventDefault();
-    if (!location || location === "") return;
-    navigate("/weather");
-    addLocation(location);
+    if (!location) return;
+    navigate(`weather/${location}`);
   };
 
   return (
