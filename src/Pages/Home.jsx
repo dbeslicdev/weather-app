@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
+import "./Home.css";
 import { useNavigate } from "react-router-dom";
 import { WeatherContext } from "../components/weather/WeatherContext";
 import { useLocation } from "../hooks/useLocation";
 
-export const Home = () => {
-  const { addLocationHandler } = useContext(WeatherContext);
+export const Home = ({ addLocation }) => {
   const { location, setLocation } = useLocation("");
   let navigate = useNavigate("");
 
@@ -12,22 +12,23 @@ export const Home = () => {
     e.preventDefault();
     if (!location || location === "") return;
     navigate("/weather");
-    addLocationHandler(location);
-    console.log(location);
+    addLocation(location);
   };
 
   return (
-    <form onSubmit={submitFormHandler}>
-      <input
-        type="text"
-        className="search-bar"
-        placeholder="Enter city name..."
-        value={location}
-        onChange={(e) => setLocation(e.target.value)}
-      />
-      <button type="submit" className="btn">
-        Search
-      </button>
-    </form>
+    <div className="home-container">
+      <form className="homeform" onSubmit={submitFormHandler}>
+        <input
+          type="text"
+          className="search-bar"
+          placeholder="Enter city name..."
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+        />
+        <button type="submit" className="btn">
+          Search
+        </button>
+      </form>
+    </div>
   );
 };

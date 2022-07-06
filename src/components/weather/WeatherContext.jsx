@@ -1,5 +1,4 @@
-import React, { useState, createContext } from "react";
-import { useFetch } from "../../hooks/useFetch";
+/* import React, { useState, useEffect, useRef, createContext } from "react";
 import { useLocation } from "../../hooks/useLocation";
 
 export const WeatherContext = createContext();
@@ -10,17 +9,25 @@ export const WeatherProvider = ({ children }) => {
     key: "73f63ff4eb375395f2f079f2dccf53ac",
   };
 
-  const { location, setLocation } = useLocation();
+  const { location } = useLocation();
+  const [data, setData] = useState([]);
+  const initMount = useRef(true);
 
-  const addLocationHandler = (location) => {
-    setLocation(location);
-  };
-
+  console.log(initMount);
   console.log(location);
-  const { data, setData } = useFetch(
-    `${api.base}${location}&appid=${api.key}&units=metric`
-  );
-  console.log(data);
+  console.log(data)
+;
+  useEffect(() => {
+    if (initMount.current) {
+      initMount.current = false;
+      return;
+    } else
+      fetch(`${api.base}Osijek&appid=${api.key}&units=metric`)
+        .then((response) => response.json())
+        .then((json) => {
+          setData(json);
+        });
+  }, [location]);
 
   return (
     <WeatherContext.Provider
@@ -28,10 +35,10 @@ export const WeatherProvider = ({ children }) => {
         api,
         data,
         setData,
-        addLocationHandler,
       }}
     >
       {children}
     </WeatherContext.Provider>
   );
 };
+ */
