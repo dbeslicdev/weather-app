@@ -4,15 +4,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
   font-family: "Kantumruy Pro", sans-serif;
 }
 
-.container {
+.container-main {
   height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
-  align-items: center;
   color: white;
 
   background: linear-gradient(#2980b9, #6dd5fa);
@@ -21,10 +20,7 @@
   background-repeat: "no-repeat";
 }
 
-.search-box {
-  width: 100%;
-  margin: 0 0 75px;
-}
+/*Search bar*/
 
 .search-box .search-bar {
   display: block;
@@ -41,12 +37,27 @@
   border-radius: 0px 0px 15px 15px;
   margin-top: -10px;
   border: 1px grey solid;
+  color: black;
+}
+
+/*Daily*/
+
+.container-daily {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-box {
+  width: 100%;
+  margin: 0 0 75px;
 }
 
 .weather {
   background-color: rgba(255, 255, 255, 0.129);
-  min-width: 500px;
-  min-height: 500px;
+  min-width: 450px;
+  min-height: 450px;
   border: 1px solid rgb(255, 254, 254);
   border-radius: 20px;
   padding: 2rem;
@@ -87,4 +98,37 @@
   display: flex;
   margin-top: 2rem;
   justify-content: space-around;
+  font-size: 1.2rem;
+}
+
+.container-weekly {
+  width: 50vw;
+  height: 22vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+/*Weekly*/
+
+.weekly {
+  background-color: rgba(255, 255, 255, 0.129);
+  border: 1px solid rgb(255, 254, 254);
+  border-radius: 20px;
+  padding: 1rem 3rem;
+}
+
+.weekly__day {
+  font-size: 1.7rem;
+}
+
+.weekly__description {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.weather__icon--small img {
+  height: 4rem;
 }
