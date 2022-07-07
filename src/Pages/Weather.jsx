@@ -1,6 +1,6 @@
 import "./Weather.css";
 import React, { useState, useRef, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { WeatherBox } from "../components/weather/WeatherBox";
 import { useLocation } from "../hooks/useLocation";
 
@@ -20,8 +20,6 @@ export const Weather = () => {
         setData(json);
       });
   }, []);
-
-  let navigate = useNavigate("");
 
   const [data, setData] = useState();
 
