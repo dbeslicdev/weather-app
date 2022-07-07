@@ -1,4 +1,3 @@
-import "./Weather.css";
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { WeatherBox } from "../components/weather/WeatherBox";

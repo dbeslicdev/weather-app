@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./WeatherBox.css";
 
 export const WeatherBox = ({
   data,
