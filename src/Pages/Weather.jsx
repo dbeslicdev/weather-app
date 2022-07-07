@@ -29,11 +29,6 @@ export const Weather = () => {
 
   const fetchIcon = (icon) => `http://openweathermap.org/img/wn/${icon}@2x.png`;
 
-  const handleSearch = (e) => {
-    if (!location) return;
-    navigate(`weather/${location}`);
-  };
-
   return (
     <>
       {data && (
