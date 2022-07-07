@@ -18,7 +18,7 @@ export const Home = () => {
       <form className="homeform" onSubmit={submitFormHandler}>
         <input
           type="text"
-          className="search-bar"
+          className="homeform__search-bar"
           placeholder="Enter city name..."
           value={location}
           onChange={(e) => setLocation(e.target.value)}

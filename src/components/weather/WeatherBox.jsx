@@ -3,22 +3,25 @@ import React, { useState } from "react";
 export const WeatherBox = ({
   data,
   fetchIcon,
-  handleSearch,  
+  query,
+  setQuery,
+  onEnter = { onEnter },
 }) => {
   const { city, list } = data;
-
-  
 
   return (
     <div className="container-main">
       <div className="container-daily">
-        <form className="search-box" onSubmit={handleSearch}>
+        <form className="weatherform">
           <input
             type="text"
             className="search-bar"
             placeholder="Enter city name..."
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
+            value={query}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") onEnter();
+            }}
+            onChange={(e) => setQuery(e.target.value)}
           />
         </form>
         <div className="weather">

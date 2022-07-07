@@ -21,10 +21,22 @@
   border: 1px green solid;
 }
 
-.homeform {
+.homeform .homeform__search-bar {
   display: flex;
+  padding: 10px 50px;
   justify-content: center;
   align-content: center;
+  color: black;
+
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+
+  background-color: rgba(255, 255, 255, 0.819);
+  border-radius: 20px;
+  margin-top: -10px;
+  border: 1px grey solid;
   color: black;
 }
 
